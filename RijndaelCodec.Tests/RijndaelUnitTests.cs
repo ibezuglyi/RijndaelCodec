@@ -72,7 +72,8 @@ namespace RijndaelCodec.Tests
             var dataToEncode = File.ReadAllText(file1);
             var result = Coder.Encode(dataToEncode);
             var decoded = Decoder.Decode(result);
-            Assert.AreEqual(dataToEncode, decoded);
+            int comparisonResult = string.Compare(dataToEncode, decoded);
+            Assert.AreEqual(comparisonResult, 0);
         }
       
 
